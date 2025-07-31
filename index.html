@@ -1,1 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronic Repair Service</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
 
+    <header class="main-header">
+        <div class="container">
+            <h1 class="logo">ElectroFix</h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#book-slot">Book Slot</a></li>
+                    <li><a href="#feedback">Feedback</a></li>
+                    <li><a href="#" id="login-nav-btn">Login / Register</a></li>
+                    </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section id="auth" class="section-card auth-section">
+            <h2>Login or Register</h2>
+            <div class="auth-forms">
+                <form class="auth-form" id="login-form">
+                    <h3>Login</h3>
+                    <div class="form-group">
+                        <label for="login-email">Email:</label>
+                        <input type="email" id="login-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password:</label>
+                        <input type="password" id="login-password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn primary-btn">Login</button>
+                    <p class="switch-form-text">Don't have an account? <a href="#" id="show-register">Register here</a></p>
+                </form>
+
+                <form class="auth-form hidden" id="register-form">
+                    <h3>Register</h3>
+                    <div class="form-group">
+                        <label for="register-name">Name:</label>
+                        <input type="text" id="register-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-email">Email:</label>
+                        <input type="email" id="register-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password">Password:</label>
+                        <input type="password" id="register-password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-confirm-password">Confirm Password:</label>
+                        <input type="password" id="register-confirm-password" name="confirm_password" required>
+                    </div>
+                    <button type="submit" class="btn primary-btn">Register</button>
+                    <p class="switch-form-text">Already have an account? <a href="#" id="show-login">Login here</a></p>
+                </form>
+            </div>
+        </section>
+
+        <section id="services" class="section-card">
+            <h2>Our Services</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <img src="https://res.cloudinary.com/dgknjxbe7/image/upload/v1753955331/img1_mlqyzu.png"/>
+                    <h3>Fan Repair</h3>
+                    <p>Expert repair for all types of ceiling and table fans.</p>
+                    <button class="btn secondary-btn">Book Now</button>
+                </div>
+                <div class="service-card">
+                    <img src="https://res.cloudinary.com/dgknjxbe7/image/upload/v1753955395/img_2_eyogir.jpg" alt="AC Repair Icon">
+                    <h3>AC Service & Repair</h3>
+                    <p>Installation, servicing, and repair for split and window ACs.</p>
+                    <button class="btn secondary-btn">Book Now</button>
+                </div>
+                <div class="service-card">
+                    <img src="https://res.cloudinary.com/dgknjxbe7/image/upload/v1753955579/washing_machine_swor4z.webp" alt="Washing Machine Repair Icon">
+                    <h3>Washing Machine Repair</h3>
+                    <p>Front-load, top-load, semi-automatic washing machine repair.</p>
+                    <button class="btn secondary-btn">Book Now</button>
+                </div>
+                <div class="service-card">
+                    <img src="https://res.cloudinary.com/dgknjxbe7/image/upload/v1753955591/smart_tv_zxj2bz.avif" alt="Smart TV Repair Icon">
+                    <h3>Smart TV Repair</h3>
+                    <p>Screen repair, software issues, and general TV servicing.</p>
+                    <button class="btn secondary-btn">Book Now</button>
+                </div>
+                <div class="service-card">
+                    <img src="https://res.cloudinary.com/dgknjxbe7/image/upload/v1753955601/refrigerator_mi3ebs.jpg" alt="Refrigerator Repair Icon">
+                    <h3>Refrigerator Repair</h3>
+                    <p>Cooling issues, compressor repair, and general fridge maintenance.</p>
+                    <button class="btn secondary-btn">Book Now</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="book-slot" class="section-card">
+            <h2>Book Your Repair Slot</h2>
+            <form class="booking-form">
+                <div class="form-group">
+                    <label for="appliance-type">Select Appliance:</label>
+                    <select id="appliance-type" name="appliance" required>
+                        <option value="">-- Choose Appliance --</option>
+                        <option value="fan">Fan</option>
+                        <option value="ac">AC</option>
+                        <option value="washing-machine">Washing Machine</option>
+                        <option value="smart-tv">Smart TV</option>
+                        <option value="refrigerator">Refrigerator</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="problem-description">Describe Your Problem:</label>
+                    <textarea id="problem-description" name="problem" rows="4" placeholder="e.g., My AC is not cooling properly and making a strange noise." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="preferred-date">Preferred Date:</label>
+                    <input type="date" id="preferred-date" name="date" required min="2025-07-22"> </div>
+
+                <div class="form-group">
+                    <label>Available Time Slots:</label>
+                    <div class="time-slots-grid">
+                        <label><input type="radio" name="time-slot" value="09:00-11:00" required> 09:00 AM - 11:00 AM</label>
+                        <label><input type="radio" name="time-slot" value="11:00-13:00"> 11:00 AM - 01:00 PM</label>
+                        <label><input type="radio" name="time-slot" value="14:00-16:00"> 02:00 PM - 04:00 PM</label>
+                        <label><input type="radio" name="time-slot" value="16:00-18:00"> 04:00 PM - 06:00 PM</label>
+                        </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="customer-address">Service Address:</label>
+                    <textarea id="customer-address" name="address" rows="3" placeholder="Flat/House No., Building/Street, Area, City, Pincode" required></textarea>
+                </div>
+
+                <button type="submit" class="btn primary-btn">Confirm Booking</button>
+            </form>
+        </section>
+
+        <section id="feedback" class="section-card">
+            <h2>Share Your Feedback</h2>
+            <form class="feedback-form">
+                <div class="form-group">
+                    <label for="service-rating">Overall Rating:</label>
+                    <div class="stars" id="service-rating">
+                        <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="5 stars">&#9733;</label>
+                        <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="4 stars">&#9733;</label>
+                        <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="3 stars">&#9733;</label>
+                        <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="2 stars">&#9733;</label>
+                        <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="1 star">&#9733;</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="feedback-comments">Comments:</label>
+                    <textarea id="feedback-comments" name="comments" rows="5" placeholder="Tell us about your experience..." required></textarea>
+                </div>
+                <button type="submit" class="btn primary-btn">Submit Feedback</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 ElectroFix. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Basic JavaScript for form switching (no real authentication)
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginForm = document.getElementById('login-form');
+            const registerForm = document.getElementById('register-form');
+            const showRegisterBtn = document.getElementById('show-register');
+            const showLoginBtn = document.getElementById('show-login');
+
+            showRegisterBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                loginForm.classList.add('hidden');
+                registerForm.classList.remove('hidden');
+            });
+
+            showLoginBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                registerForm.classList.add('hidden');
+                loginForm.classList.remove('hidden');
+            });
+        });
+    </script>
+
+</body>
+</html>
